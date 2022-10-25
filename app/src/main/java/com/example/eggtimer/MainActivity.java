@@ -21,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
     CountDownTimer countDownTimer;
     Boolean counterIsActive = false;
 
-
-
     public void updateTimer (int secondsLeft) {
         int minutes = secondsLeft / 60;
         int seconds = secondsLeft - (minutes * 60);
@@ -45,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         counterIsActive = false;
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if (counterIsActive) {
                     resetTimer();
-
 
                 } else {
                     counterIsActive = true;
@@ -90,17 +86,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 Log.i("timer", Integer.toString(progress));
                 updateTimer(progress);
 
-
-                }
-
+            }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -112,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 }
